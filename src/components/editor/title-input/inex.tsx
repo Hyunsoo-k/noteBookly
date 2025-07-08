@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useState, useRef } from "react";
 
-import TitleInputToolbar from "../toolbar/title-input-toolbar";
+import TitleInputToolbar from "@/components/editor/toolbar/title-input-toolbar";
 
 import styles from "./index.module.scss";
 
