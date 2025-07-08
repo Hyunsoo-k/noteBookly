@@ -1,0 +1,67 @@
+.title-input-component {
+  display: flex;
+  flex-direction: column;
+  // min-height: 450px;
+  padding: 160px 0 50px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgb(206, 206, 206);
+
+  .input-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 800px;
+    margin: auto auto 0;
+
+    .title {
+      outline: none;
+      line-height: 1.4;
+      font-size: 45px;
+      font-weight: 400;
+      font-family: "Nanum Myeongjo", serif;
+      color: #333333;
+
+      &:empty::before {
+        content: attr(data-placeholder);
+        color: #cccccc;
+      }
+
+      &:hover {
+        cursor: text;
+      }
+
+      &::selection {
+        background-color: #B5D6FD;
+      }
+    }
+
+    .sub-title {
+      display: block;
+      width: 100%;
+      background-color: inherit;
+      outline: none;
+      border: none;
+      font-size: 17px;
+      font-family: "Nanum Myeongjo", serif;
+      color: #333333;
+
+      &::placeholder {
+        font-weight: 500;
+        color: #cccccc;
+      }
+
+      &::selection {
+        background-color: #B5D6FD;
+      }
+    }
+  }
+
+  .title.--active-background-image,
+  .sub-title.--active-background-image {
+    color: #fff;
+  }
+}
