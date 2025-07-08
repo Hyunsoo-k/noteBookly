@@ -1,6 +1,5 @@
 import type { JSX } from "react";
 import { useRef } from "react";
-import { useForm, FormProvider } from "react-hook-form";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
@@ -13,8 +12,6 @@ import EditorToolbar from "../../..//components/editor/toolbar/editor-toolbar";
 import styles from "./index.module.scss";
 
 const CreatePostPage = ():JSX.Element => {
-  const methods = useForm({ mode: "onChange" });
-
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -56,19 +53,17 @@ const CreatePostPage = ():JSX.Element => {
   };
 
   return (
-    <FormProvider {...methods}>
-      <form className={styles["create-post-page-component"]}>
-        <TitleInput />
-        <div
-          ref={editorContentWrapperRef}
-          onClick={handleClickEditorArea}
-          className={styles["editor-content-wrapper"]}
-        >
-          <EditorContent editor={editor} spellCheck="false" className={styles["editor-content"]} />
-          <EditorToolbar editor={editor} />
-        </div>
-      </form>
-    </FormProvider>
+    <form className={styles["create-post-page-component"]}>
+      <TitleInput />
+      <div
+        ref={editorContentWrapperRef}
+        onClick={handleClickEditorArea}
+        className={styles["editor-content-wrapper"]}
+      >
+        <EditorContent editor={editor} spellCheck="false" className={styles["editor-content"]} />
+        <EditorToolbar editor={editor} />
+      </div>
+    </form>
   );
 };
 
