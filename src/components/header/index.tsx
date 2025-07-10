@@ -31,7 +31,7 @@ const Header = (): JSX.Element => {
   }, []);
 
   return (
-    <div ref={headerRef} className={styles["header-component"]}>
+    <header ref={headerRef} className={styles["header-component"]}>
       <div className={styles["content"]}>
         <h1 className={styles["logo"]}>
           <Link to="/">noteBookly</Link>
@@ -41,10 +41,13 @@ const Header = (): JSX.Element => {
             저장
           </button>
         ) : (
-          <PiMagnifyingGlassLight size={25} />
+          <div className={styles["active-tool-box"]}>
+            <Link to="/create-post">글쓰기</Link>
+            <PiMagnifyingGlassLight size={25} />
+          </div>
         )}
       </div>
-    </div>
+    </header>
   );
 };
 
