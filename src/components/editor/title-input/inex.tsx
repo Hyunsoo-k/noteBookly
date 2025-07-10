@@ -40,9 +40,7 @@ const TitleInput = (): JSX.Element => {
     if (!$title) return;
 
     const text = $title.innerText.trim();
-    if (text === "") {
-      $title.innerHTML = "";
-    }
+    if (text === "") $title.innerHTML = "";
 
     const titleHeight = Math.round($title.getBoundingClientRect().height);
     const lineHeight = Math.round(TITLE_FONT_SIZE * TITLE_LINE_HEIGHT);
