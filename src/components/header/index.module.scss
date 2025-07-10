@@ -30,12 +30,40 @@
       }
     }
 
-    > svg {
-      position: relative;
-      top: 5px;
+    .active-tool-box {
+      display: flex;
+      align-items: center;
 
-      &:hover {
-        cursor: pointer;
+      > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 34px;
+        margin-right: 20px;
+        background-color: inherit;
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 20px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 13px;
+        color: rgb(180, 180, 180);
+
+        &:hover {
+          cursor: pointer;
+          background-color: rgb(9, 204, 178);
+          border: 1px solid rgb(9, 204, 178);
+          color: #FFF;
+        }
+      }
+
+      > svg {
+        position: relative;
+        top: -1px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 

@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useState, useRef } from "react";
 
-import TitleInputToolbar from "../toolbar/title-input-toolbar";
+import TitleInputToolbar from "@/components/editor/toolbar/title-input-toolbar";
 
 import styles from "./index.module.scss";
 
@@ -40,9 +40,7 @@ const TitleInput = (): JSX.Element => {
     if (!$title) return;
 
     const text = $title.innerText.trim();
-    if (text === "") {
-      $title.innerHTML = "";
-    }
+    if (text === "") $title.innerHTML = "";
 
     const titleHeight = Math.round($title.getBoundingClientRect().height);
     const lineHeight = Math.round(TITLE_FONT_SIZE * TITLE_LINE_HEIGHT);

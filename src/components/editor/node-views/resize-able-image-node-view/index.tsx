@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import React, { useState, useEffect, useRef } from "react";
-import { NodeViewWrapper, NodeViewContent } from "@tiptap/react";
+import { NodeViewWrapper } from "@tiptap/react";
 
 const ResizeAbleImageNodeView = ({
   node,

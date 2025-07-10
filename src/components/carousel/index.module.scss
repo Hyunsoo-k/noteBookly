@@ -1,0 +1,50 @@
+  .carousel-component {
+    overflow-x: scroll;
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .post-box {
+      list-style-type: none;
+      display: flex;
+      gap: 25px;
+      width: 900px;
+      margin: 0 auto;
+      padding: 0;
+      
+      .post {
+        flex-shrink: 0;
+        width: 270px;
+
+        > a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .scroll-button-box {
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 0 60px;
+      
+      .scroll-button {
+        opacity: 0.6;
+        background-color: #FFF;
+        border: none;
+        border-radius: 50%;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }

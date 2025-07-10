@@ -4,10 +4,10 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 
-import extendedTextAlign from "../../../editor/extensions/extendedTextAlign";
-import resizeAbleImageNode from "../../..//editor/nodes/resize-able-image-node";
-import TitleInput from "../../..//components/editor/title-input/inex";
-import EditorToolbar from "../../..//components/editor/toolbar/editor-toolbar";
+import extendedTextAlign from "@/editor/extensions/extendedTextAlign";
+import resizeAbleImageNode from "@/editor/nodes/resize-able-image-node";
+import TitleInput from "@/components/editor/title-input/inex";
+import EditorToolbar from "@/components/editor/toolbar/editor-toolbar";
 
 import styles from "./index.module.scss";
 
