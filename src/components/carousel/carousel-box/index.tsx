@@ -5,11 +5,11 @@ import { PiArrowLeftThin } from "react-icons/pi";
 import { PiArrowRightThin } from "react-icons/pi";
 
 import { mockData } from "@/mock-data/carousel";
-import PostThumbnail from "@/components/post-thumbnail";
+import CarouselItem from "@/components/carousel/carousel-item";
 
 import styles from "./index.module.scss";
 
-const Carousel = (): JSX.Element => {
+const CarouselBox = (): JSX.Element => {
   const carouselRef = useRef<HTMLUListElement | null>(null);
   const isScrollActive = useRef<boolean>(false);
 
@@ -43,7 +43,7 @@ const Carousel = (): JSX.Element => {
         {mockData.map((postData: any, index: number) => (
           <li key={index} className={styles["post"]}>
             <Link to="/">
-              <PostThumbnail postData={postData} />
+              <CarouselItem postData={postData} />
             </Link>
           </li>
         ))}
@@ -72,4 +72,4 @@ const Carousel = (): JSX.Element => {
   );
 };
 
-export default Carousel
+export default CarouselBox;
