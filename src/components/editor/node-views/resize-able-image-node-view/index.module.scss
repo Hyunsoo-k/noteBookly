@@ -1,0 +1,28 @@
+.node-view-wrapper {
+  position: relative;
+  display: inline-block;
+
+  > img {
+    max-Width: 100%;
+    cursor: pointer;
+  }
+
+  .resize-controller-wrapper {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background-color: #FFF;
+    border-radius: 50%;
+    border: 2px solid black;
+    transform: translateX(50%);
+    cursor: nwse-resize;
+
+    > svg {
+      position: relative;
+      top: 2px;
+      left: 2px;
+    }
+  }
+}

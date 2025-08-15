@@ -1,0 +1,44 @@
+.post-auth-box-component {
+  width: 800px;
+  margin: 30px auto 0;
+
+  .input-box {
+
+    .input-area {
+      display: inline-block;
+
+      > label {
+        margin-right: 10px;
+        font-size: 15px;
+        font-family: "Nanum Myeongjo", serif;
+        color: #b4b4b4;
+
+        &::selection {
+          background-color: #B5D6FD;
+        }
+      }
+
+      > label.--active-background-image {
+        color: #fff;
+      }
+
+      > input {
+        width: 120px;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        font-family: "Nanum Myeongjo", serif;
+        color: #b4b4b4;
+
+        &::selection {
+          background-color: #B5D6FD;
+        }
+      }
+
+      > input.--active-background-image {
+        color: #fff;
+      }
+    }
+  }
+}

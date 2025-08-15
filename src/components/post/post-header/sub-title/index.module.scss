@@ -1,0 +1,24 @@
+.sub-title-component {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  font-family: "Nanum Myeongjo", serif;
+  color: #333333;
+
+  &::placeholder {
+    font-weight: 500;
+    color: #cccccc;
+  }
+
+  &::selection {
+    background-color: #B5D6FD;
+  }
+}
+
+.sub-title-component.--active-background-image {
+  color: #fff;
+}

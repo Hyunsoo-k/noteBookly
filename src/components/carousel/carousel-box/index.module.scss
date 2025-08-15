@@ -1,0 +1,39 @@
+  .carousel-box-component {
+    overflow-x: scroll;
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item-box {
+      list-style-type: none;
+      display: flex;
+      gap: 25px;
+      width: 900px;
+      margin: 0 auto;
+      padding: 0;
+      
+      .carousel-item-wrapper {
+        flex-shrink: 0;
+        width: 270px;
+
+        > a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .carousel-arrow-box {
+      position: fixed;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 0 60px;
+    }
+  }
