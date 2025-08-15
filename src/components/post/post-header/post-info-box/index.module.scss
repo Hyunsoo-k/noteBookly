@@ -1,0 +1,40 @@
+.post-info-box-component {
+  width: 800px;
+  margin: 30px auto 0;
+  text-align: center;
+
+  .data-box {
+    > span {
+      display: inline-block;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: "Nanum Myeongjo", serif;
+      color: #b4b4b4;
+
+    > svg {
+      margin-right: 5px;
+    }
+
+      &::selection {
+        background-color: #B5D6FD;
+      }
+    }
+
+    > span.--active-background-image {
+      color: #fff;
+    }
+
+    .boundary-dot {
+      width: 3px;
+      height: 3px;
+      margin: 0 5px 3px;
+      border-radius: 50%;
+      background-color: #2C2C2C;
+    }
+    
+    .boundary-dot.--active-background-image {
+      background-color: #FFF;
+    }
+  }
+}
