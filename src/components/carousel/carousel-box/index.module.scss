@@ -1,4 +1,4 @@
-  .carousel-component {
+  .carousel-box-component {
     overflow-x: scroll;
     position: relative;
     scrollbar-width: none;
@@ -8,7 +8,7 @@
       display: none;
     }
 
-    .post-box {
+    .carousel-item-box {
       list-style-type: none;
       display: flex;
       gap: 25px;
@@ -16,7 +16,7 @@
       margin: 0 auto;
       padding: 0;
       
-      .post {
+      .carousel-item-wrapper {
         flex-shrink: 0;
         width: 270px;
 
@@ -26,7 +26,7 @@
       }
     }
 
-    .scroll-button-box {
+    .carousel-arrow-box {
       position: fixed;
       top: 60%;
       left: 50%;
@@ -35,16 +35,5 @@
       justify-content: space-between;
       width: 100vw;
       padding: 0 60px;
-      
-      .scroll-button {
-        opacity: 0.6;
-        background-color: #FFF;
-        border: none;
-        border-radius: 50%;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
     }
   }
