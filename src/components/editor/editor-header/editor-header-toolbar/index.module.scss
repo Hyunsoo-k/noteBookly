@@ -1,0 +1,18 @@
+.title-editor-toolbar-component {
+  position: absolute;
+  top: 0;
+  right: calc(50% - 400px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transform: translateY(90%);
+
+  > button {
+    background-color: inherit;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
