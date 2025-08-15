@@ -6,6 +6,7 @@ import MainPageHeader from "@/components/header/main-page-header";
 import MainPage from "@/components/pages/main";
 import PostPage from "./components/pages/post-page";
 import CreatePostPage from "@/components/pages/create-post-page/inex";
+import Footer from "@/components/footer";
 
 import styles from "./App.module.scss";
 
@@ -24,6 +25,7 @@ const App = (): JSX.Element => {
             <Route path="/create-post" element={<CreatePostPage />} />
           </Routes>
         </QueryClientProvider>
+        <Footer />
       </BrowserRouter>
     </div>
   );

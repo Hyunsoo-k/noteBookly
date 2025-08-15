@@ -1,0 +1,41 @@
+.footer-component {
+  height: 420px;
+  padding-top: 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .banner {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    font-family: "Tangerine", cursive;
+  }
+
+  .boundary-line {
+    width: 800px;
+    height: 2px;
+    margin: 30px auto;
+    background-color: #2C2C2C;
+  }
+
+  .introduce-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > span {
+      text-align: center;
+      line-height: 30px;
+      font-size: 14px;
+      font-family: "Nanum Myeongjo", serif;
+    }
+
+    > a {
+      text-decoration: none;
+      margin: 30px auto 0;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
