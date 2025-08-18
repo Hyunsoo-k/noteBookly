@@ -1,0 +1,10 @@
+.carousel-arrow-box-component {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 0 60px;
+}

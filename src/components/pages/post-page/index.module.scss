@@ -1,3 +1,10 @@
+.post-page-component--loading {
+  height: calc(100vh - 80px - 420px); //80px: 헤더 height, 420px: 푸터 height
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .post-page-component {
   position: relative;
 }

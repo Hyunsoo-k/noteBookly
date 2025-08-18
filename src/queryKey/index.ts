@@ -1,5 +1,5 @@
 const queryKey = {
-  postList: ["postList"],
+  postList: (queryString: string) => ["postList", queryString],
   post: (_id: string) => ["post", _id]
 };
 

@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { useParams } from "react-router-dom";
+import { PulseLoader } from "react-spinners";
 
 import useGetPostQuery from "@/hooks/query/post/use-get-post-query";
 import PostHeader from "@/components/post/post-header/post-header";
@@ -15,7 +16,13 @@ const PostPage = (): JSX.Element => {
 
   if (!queryData) {
     return (
-      <div>loading</div>
+      <div className={styles["post-page-component--loading"]}>
+        <PulseLoader
+          size={15}
+          margin={10}
+          color="rgb(9, 204, 178)"
+        />
+      </div>
     )
   }
 

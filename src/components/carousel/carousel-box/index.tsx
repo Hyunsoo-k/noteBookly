@@ -1,32 +1,35 @@
-import type { JSX } from "react";
-import { useRef } from "react";
-
-import useGetPostListQuery from "@/hooks/query/post-list/use-get-post-list-query";
+import type { JSX, Ref } from "react";
 import type { ResponsePost } from "@/types/query";
 import CarouselItem from "@/components/carousel/carousel-item";
-import CarouselArrow from "@/components/carousel/carousel-arrow";
 
 import styles from "./index.module.scss";
 
-const CarouselBox = (): JSX.Element => {
-  const { data: queryData } = useGetPostListQuery();
+interface Props {
+  queryData: any;
+  ref: Ref<HTMLLIElement>;
+};
 
-  const carouselRef = useRef<HTMLUListElement | null>(null);
+const CarouselBox = ({ queryData, ref }: Props): JSX.Element => {
 
   return (
-    <article ref={carouselRef} className={styles["carousel-box-component"]}>
-      <ul className={styles["carousel-item-box"]}>
-        {queryData?.postList.map((post: ResponsePost, index: number) => (
-          <li key={index} className={styles["carousel-item-wrapper"]}>
+    <ul className={styles["carousel-box-component"]}>
+      {queryData?.pages?.map((page: any, pagesIndex: number) => (
+        page.postList.map((post: ResponsePost, postListIndex: number) => (
+          <li
+            key={post._id}
+            className={styles["carousel-item-wrapper"]}
+            ref={
+              pagesIndex === queryData.pages.length - 1 &&
+              postListIndex === page.postList.length - 1
+                ? ref
+                : null
+            }
+          >
             <CarouselItem post={post} />
           </li>
-        ))}
-      </ul>
-      <div className={styles["carousel-arrow-box"]}>
-        <CarouselArrow carouselRef={carouselRef} direction="left" />
-        <CarouselArrow carouselRef={carouselRef} direction="right" />
-      </div>
-    </article>
+        ))
+      ))}
+    </ul>
   );
 };
 
