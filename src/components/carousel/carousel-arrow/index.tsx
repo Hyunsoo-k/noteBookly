@@ -6,32 +6,31 @@ import { PiArrowRightThin } from "react-icons/pi";
 import styles from "./index.module.scss";
 
 interface Props {
-  carouselRef: RefObject<HTMLUListElement | null>;
+  carouselArticleRef: RefObject<HTMLUListElement | null>;
   direction: "left" | "right";
 };
 
-const CarouselArrow = ({ carouselRef, direction }: Props): JSX.Element => {
+const CarouselArrow = ({ carouselArticleRef, direction }: Props): JSX.Element => {
   const ArrowImage  = direction === "left"
     ? PiArrowLeftThin
     : PiArrowRightThin
-
   const isScrollActive = useRef<boolean>(false);
 
   const handleClickArrow = (direction: "left" | "right"): void => {
     if (isScrollActive.current) return;
     isScrollActive.current = true;
 
-    const $carousel = carouselRef.current;
-    if (!$carousel) return;
+    const $carouselArticle = carouselArticleRef.current;
+    if (!$carouselArticle) return;
 
-    const post = $carousel.firstElementChild as HTMLElement;
+    const post = $carouselArticle.firstElementChild as HTMLElement;
     if (!post) return;
 
     const postWidth = 270;
     const gap = 25;
-    const scrollAmount = postWidth + gap;
+    const scrollAmount = (postWidth + gap) * 4;
 
-    $carousel.scrollBy({
+    $carouselArticle.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
