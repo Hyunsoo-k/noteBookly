@@ -9,6 +9,7 @@ import useToastPanel from "@/hooks/toast-panel/use-toast-panel";
 import ToastPanel from "@/components/toast-panel";
 import extendedTextAlign from "@/editor/extensions/extendedTextAlign";
 import resizeAbleImageNode from "@/editor/nodes/resize-able-image-node";
+import type { RequestPost } from "@/types/query";
 import useCreatePostQuery from "@/hooks/query/post/use-create-post-query";
 import uploadBase64Image from "@/supabase/upload-base64-to-supabase";
 import EditorHeader from "@/components/editor/editor-header/editor-header";
@@ -42,6 +43,7 @@ const CreatePostPage = (): JSX.Element => {
   const formTools = useForm({
     mode: "onChange",
     defaultValues: {
+      subTitle: null,
       thumbnailUrl: null,
       headerAlign: "left",
     }
@@ -52,12 +54,13 @@ const CreatePostPage = (): JSX.Element => {
    */
   const useCreatePostMutation = useCreatePostQuery();
   const submitHandler = {
-    handleSubmit: async (watch: Record<string, string | null>): Promise<void> => {
+    handleSubmit: async (watch: RequestPost): Promise<void> => {
       if (watch.thumbnailUrl) {
         watch.thumbnailUrl = await uploadBase64Image(watch.thumbnailUrl);
       }
 
       const $content = editor?.view.dom;
+      if (!$content?.innerHTML) return toggleToastPanelActive("내용을 입력해 주세요.");
       if ($content) {
         const images = Array.from($content.querySelectorAll("img"));
         await Promise.all(images.map(async (img) => {
@@ -77,7 +80,7 @@ const CreatePostPage = (): JSX.Element => {
         subTitle: watch.subTitle,
         headerAlign: watch.headerAlign,
         content
-      }
+      };
       useCreatePostMutation.mutate(requestBody);
     },
 
