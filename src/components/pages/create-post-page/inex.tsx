@@ -69,7 +69,6 @@ const CreatePostPage = (): JSX.Element => {
         }));
       }
       const content = $content?.innerHTML;
-      console.log(content)
       const requestBody = {
         writer: watch.writer,
         password: watch.password,
@@ -79,8 +78,6 @@ const CreatePostPage = (): JSX.Element => {
         headerAlign: watch.headerAlign,
         content
       }
-
-      console.log(requestBody);
       useCreatePostMutation.mutate(requestBody);
     },
 
