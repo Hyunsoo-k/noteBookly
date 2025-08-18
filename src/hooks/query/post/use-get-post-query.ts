@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { instance } from "@/axios";
-import type { Post } from "@/types/query";
+import type { ResponsePost } from "@/types/query";
 import queryKey from "@/queryKey";
 
-const queryFn = async (_id: string): Promise<Post> => {
+const queryFn = async (_id: string): Promise<ResponsePost> => {
   const response = await instance.get(`/post/${_id}`);
 
   return response.data;
