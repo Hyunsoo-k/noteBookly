@@ -1,20 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { instance } from "@/axios";
 import queryKey from "@/queryKey";
 
-const queryFn = async (): Promise<any> => {
-  const response = await instance.get("/post-list");
+const queryFn = async (queryString: string, pageParam: string | null): Promise<any> => {
+  if (queryString && pageParam) queryString = `${queryString}&cursor=${pageParam}`;
+  if (!queryString && pageParam) queryString = `?cursor=${pageParam}`;
+  console.log(queryString);
+  const response = await instance.get(`/post-list${queryString}`);
 
   return response.data;
 };
 
-const useGetPostListQuery = () => {
-  return useQuery({
-    queryKey: queryKey.postList,
-    queryFn,
-    gcTime: Infinity,
-    staleTime: 10 * 6 * 1000
+const useGetPostListQuery = (queryString: string) => {
+  return useInfiniteQuery({
+    queryKey: queryKey.postList(queryString),
+    queryFn: ({ pageParam  = null }) => queryFn(queryString, pageParam),
+    getNextPageParam: (lastPagesQuery: any) => {
+      const lastPost = lastPagesQuery.postList.at(-1);
+      return lastPost?._id ?? null;
+    },
+    staleTime: 10 * 60 * 1000,
+    initialPageParam : null
   });
 };
 
