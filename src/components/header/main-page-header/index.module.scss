@@ -10,9 +10,9 @@
   .content {
     display: flex;
     justify-content: space-between;
-    padding: 20px 25px;
+    padding: 14px 25px;
     
-    .logo {
+    .banner {
       margin: 0;
       user-select: none;
       letter-spacing: 0.5px;
@@ -30,7 +30,7 @@
       }
     }
 
-    .active-tool-box {
+    .tool-box {
       display: flex;
       align-items: center;
 
@@ -60,26 +60,7 @@
       > svg {
         position: relative;
         top: -1px;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-
-    .create-post-button {
-      width: 65px;
-      background-color: inherit;
-      border: 1px solid rgb(180, 180, 180);
-      border-radius: 20px;
-      letter-spacing: 1px;
-      color: rgb(180, 180, 180);
-
-      &:hover {
         cursor: pointer;
-        background-color: rgb(9, 204, 178);
-        border: 1px solid rgb(9, 204, 178);
-        color: #FFF;
       }
     }
   }
