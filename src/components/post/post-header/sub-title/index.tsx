@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 interface Props {
   subTitle: string;
   thumbnailUrl: string;
-  headerAlign: "left" | "right";
+  headerAlign: "left" | "center";
 };
 
 const SubTitle = ({
