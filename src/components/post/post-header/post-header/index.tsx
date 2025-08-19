@@ -10,8 +10,8 @@ interface Props {
   writer: string;
   createdAt: string;
   title: string;
-  subTitle: string;
-  thumbnailUrl: string;
+  subTitle: string | null;
+  thumbnailUrl: string | null;
   headerAlign: "left" | "center";
 }
 

@@ -4,7 +4,7 @@ import styles from "./index.module.scss";
 
 interface Props {
   title: string;
-  thumbnailUrl: string;
+  thumbnailUrl: string | null;
   headerAlign: "left" | "center";
 };
 

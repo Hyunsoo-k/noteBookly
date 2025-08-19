@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 interface Props {
   writer: string;
   createdAt: string;
-  thumbnailUrl: string;
+  thumbnailUrl: string | null;
   headerAlign: "left" | "center";
 };
 

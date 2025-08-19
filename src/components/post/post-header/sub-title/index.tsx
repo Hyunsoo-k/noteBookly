@@ -3,8 +3,8 @@ import type { JSX } from "react";
 import styles from "./index.module.scss";
 
 interface Props {
-  subTitle: string;
-  thumbnailUrl: string;
+  subTitle: string | null;
+  thumbnailUrl: string | null;
   headerAlign: "left" | "center";
 };
 
