@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import { useForm, FormProvider, type SubmitHandler } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
