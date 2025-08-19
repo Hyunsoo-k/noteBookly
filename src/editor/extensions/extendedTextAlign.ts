@@ -1,30 +1,20 @@
-import TextAlign from '@tiptap/extension-text-align'
+import TextAlign from '@tiptap/extension-text-align';
 
 const extendedTextAlign = TextAlign.extend({
   addCommands() {
     return {
       toggleTextAlign:
         (alignment) =>
-        ({ editor, commands, state }) => {
-          const isInBlockquote = state.selection.$from.path.some((node: any | number) => {
-            if (typeof node !== "number") {
-              return node.type.name === 'blockquote';
-            }
-          });
+        ({ editor, commands }) => {
+          if (editor.isActive('blockquote')) return true;
 
-          if (isInBlockquote) {
-            return true;
-          }
+          const nodeType = editor.state.selection.$from.parent.type.name;
 
-          const nodeType = state.selection.$from.parent.type.name;
-
-          if (!editor.isActive({ textAlign: alignment })) {
-            return commands.updateAttributes(nodeType, { textAlign: alignment });
-          } else {
-            return commands.resetAttributes(nodeType, ['textAlign']);
-          }
+          return !editor.isActive({ textAlign: alignment })
+            ? commands.updateAttributes(nodeType, { textAlign: alignment })
+            : commands.resetAttributes(nodeType, ['textAlign']);
         }
-    }
+    };
   },
 });
 
