@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import { useForm, FormProvider } from "react-hook-form";
+import { useForm, FormProvider, type SubmitHandler } from "react-hook-form";
 import { useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
@@ -40,12 +40,16 @@ const CreatePostPage = (): JSX.Element => {
   /**
    * react-hook-form 도구 생성
    */
-  const formTools = useForm({
+  const formTools = useForm<RequestPost>({
     mode: "onChange",
     defaultValues: {
+      writer: "",
+      password: "",
+      title: "",
       subTitle: null,
       thumbnailUrl: null,
       headerAlign: "left",
+      content: ""
     }
   });
 
@@ -54,7 +58,7 @@ const CreatePostPage = (): JSX.Element => {
    */
   const useCreatePostMutation = useCreatePostQuery();
   const submitHandler = {
-    handleSubmit: async (watch: RequestPost): Promise<void> => {
+    submit: async (watch: RequestPost): Promise<void> => {
       if (watch.thumbnailUrl) {
         watch.thumbnailUrl = await uploadBase64Image(watch.thumbnailUrl);
       }
@@ -75,16 +79,16 @@ const CreatePostPage = (): JSX.Element => {
       const requestBody = {
         writer: watch.writer,
         password: watch.password,
-        thumbnailUrl: watch.thumbnailUrl,
         title: watch.title,
         subTitle: watch.subTitle,
+        thumbnailUrl: watch.thumbnailUrl,
         headerAlign: watch.headerAlign,
         content
       };
       useCreatePostMutation.mutate(requestBody);
     },
 
-    handleSubmitError: (error: any): void => {
+    error: (error: any): void => {
       const [, errorValue] = Object.entries(error)[0] as [string, Record<string, string>];
       toggleToastPanelActive(errorValue?.message);
     }
@@ -93,7 +97,7 @@ const CreatePostPage = (): JSX.Element => {
   return (
     <FormProvider {...formTools}>
       <form
-        onSubmit={formTools.handleSubmit(submitHandler.handleSubmit, submitHandler.handleSubmitError)}
+        onSubmit={formTools.handleSubmit(submitHandler.submit, submitHandler.error)}
         className={styles["create-post-page-component"]}
       >
         <CreateOrEditPageHeader />
