@@ -8,6 +8,7 @@
 - tiptap
 - react-hook-form
 - tanstack-query
+- scss
 - supabase
 
 ## 배포
