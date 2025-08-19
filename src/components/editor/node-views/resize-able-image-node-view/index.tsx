@@ -1,16 +1,11 @@
 import type { JSX } from "react";
 import React, { useState, useEffect, useRef } from "react";
-import { NodeViewWrapper } from "@tiptap/react";
+import { NodeViewWrapper, type ReactNodeViewProps } from '@tiptap/react';
 import { TfiArrow } from "react-icons/tfi";
 
 import styles from "./index.module.scss";
 
-interface Props {
-  node: { attrs: { src: string; alt: string; width: string; height: string } };
-  updateAttributes: (attrs: Record<string, any>) => void;
-};
-
-const ResizeAbleImageNodeView = ({ node, updateAttributes }: Props): JSX.Element => {
+const ResizeAbleImageNodeView = ({ node, updateAttributes }: ReactNodeViewProps): JSX.Element => {
   const { src, alt, width, height } = node.attrs;
   const [isResizeControllerActive, setIsResizeControllerActive] = useState<boolean>(false);
   const [isResizing, setIsResizing] = useState(false);

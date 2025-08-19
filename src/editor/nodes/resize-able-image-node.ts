@@ -1,17 +1,13 @@
 import { Node, mergeAttributes } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
 
-import ResizeAbleImageNodeView from "../../components/editor/node-views/resize-able-image-node-view";
+import ResizeAbleImageNodeView from "@/components/editor/node-views/resize-able-image-node-view";
 
 const resizeAbleImageNode = Node.create({
   name: "resizeAbleImageNode",
-
   group: "block",
-
   draggable: true,
-
   selectable: true,
-
   addAttributes() {
     return {
       src: { default: null },
@@ -20,11 +16,9 @@ const resizeAbleImageNode = Node.create({
       height: { default: "auto" },
     };
   },
-
   parseHTML() {
     return [{ tag: 'img[data-type="resizable-image"]' }];
   },
-
   renderHTML({ HTMLAttributes }) {
     return [
       "img",
@@ -33,10 +27,9 @@ const resizeAbleImageNode = Node.create({
       }),
     ];
   },
-
   addNodeView() {
     return ReactNodeViewRenderer(ResizeAbleImageNodeView);
-  },
+  }
 });
 
 export default resizeAbleImageNode;
