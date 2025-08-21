@@ -1,69 +1,61 @@
-# React + TypeScript + Vite
+## noteBookly
+카카오의 브런치스토리를 참고하여 만든 에세이 데스크탑 전용 웹 애플리케이션 (모바일 전용은 별도로 개발 예정)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 개발 인원
+1인 개발
 
-Currently, two official plugins are available:
+## 기술 스택
+- typescript
+- react
+- vite
+- tiptap
+- react-hook-form
+- tanstack-query
+- scss
+- supabase
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 배포
+Vercel
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 설치
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 개발환경 실행
 ```
+npm run dev
+```
+
+## 폴더 구조
+```
+root
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+├─ README.md
+├─ src
+│  ├─ App.module.scss
+│  ├─ App.tsx
+│  ├─ assets
+│  ├─ axios
+│  ├─ components
+│  ├─ editor
+│  ├─ hooks
+│  ├─ index.css
+│  ├─ main.tsx
+│  ├─ queryKey
+│  ├─ supabase
+│  ├─ types
+│  ├─ utils
+│  └─ vite-env.d.ts
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+└─ vite.config.ts
+```
+
+## 특징
+tiptap을 이용한 WYSIWYG 구현과 WYSIWYG 내에서의 이미지 리사이징, contenteditable요소와 react-hook-form의 결합을 중점으로 구현하였습니다.
