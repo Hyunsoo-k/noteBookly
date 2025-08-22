@@ -5,12 +5,7 @@ import styles from "./index.module.scss";
 
 const Footer = (): JSX.Element => {
   return (
-    <div
-      className={styles["footer-component"]}
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.5)), url(/image/crumpled-paper.jpg)`
-      }}
-    >
+    <div className={styles["footer-component"]}>
       <h2 className={styles["banner"]}>noteBookly</h2>
       <div className={styles["boundary-line"]}></div>
       <div className={styles["introduce-box"]}>
@@ -24,7 +19,7 @@ const Footer = (): JSX.Element => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <SiGithub size={25} color="black"/>
+          <SiGithub size={25} color="#FFF"/>
         </a>
       </div>
     </div>

@@ -1,17 +1,20 @@
 .carousel-article-component--loading {
-  height: calc(100vh - 92px - 420px); //92px: 헤더 height, 420px: 푸터 height
+  height: calc(100vh - 60px/*헤더*/ - 420px/*푸터*/);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .carousel-article-component {
+  position: relative;
+
+  .carousel-box-wrapper {
     overflow-x: scroll;
-    position: relative;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
       display: none;
     }
+  }
 }

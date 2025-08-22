@@ -1,9 +1,9 @@
   .content-component {
     position: relative;
     width: 800px;
-    min-height: calc(100vh/*전체 화면*/ - 74px/*헤더*/ - 392px/*제목입력 컴포넌트*/);
+    min-height: calc(100vh/*전체 화면*/ - 60px/*헤더*/ - 392px/*제목입력 컴포넌트*/);
     margin: 0 auto; /* 마진상쇄 방지하기위해 위, 아래는 padding으로 여백 */
-    padding: 50px 0;  /* 마진상쇄 방지하기위해 위, 아래는 padding으로 여백 */
+    padding: 50px 0 100px;  /* 마진상쇄 방지하기위해 위, 아래는 padding으로 여백 */
     font-family: "Nanum Myeongjo", serif;
     color: rgb(97, 97, 97);
 

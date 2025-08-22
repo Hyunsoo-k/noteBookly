@@ -5,7 +5,7 @@ import CarouselArrow from "../carousel-arrow";
 import styles from "./index.module.scss";
 
 interface Props {
-  carouselArticleRef: RefObject<HTMLUListElement | null>;
+  carouselArticleRef: RefObject<HTMLDivElement | null>;
 };
 
 const CarouselArrowBox = ({ carouselArticleRef }: Props): JSX.Element => {

@@ -57,7 +57,6 @@ const ContentEditor = ({ editor }: Props): JSX.Element => {
         />
       )}
     >
-
     </Controller>
   );
 };
