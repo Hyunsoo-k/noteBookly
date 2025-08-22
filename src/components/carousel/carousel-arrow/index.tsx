@@ -6,7 +6,7 @@ import { PiArrowRightThin } from "react-icons/pi";
 import styles from "./index.module.scss";
 
 interface Props {
-  carouselArticleRef: RefObject<HTMLUListElement | null>;
+  carouselArticleRef: RefObject<HTMLDivElement | null>;
   direction: "left" | "right";
 };
 
@@ -46,7 +46,7 @@ const CarouselArrow = ({ carouselArticleRef, direction }: Props): JSX.Element =>
       onClick={() => { handleClickArrow(direction); }}
       className={styles["carousel-arrow"]}
     >
-      <ArrowImage size={80} color="#666666" />
+      <ArrowImage size={80} color="#9a9a9a" />
     </button>
   );
 };

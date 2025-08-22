@@ -18,7 +18,7 @@ const CarouselArticle = (): JSX.Element => {
     fetchNextPage
   } = useGetPostListQuery(queryString);
 
-  const carouselArticleRef = useRef<HTMLUListElement | null>(null);
+  const carouselBoxWrapperRef = useRef<HTMLDivElement | null>(null);
   const lastPostRef = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
@@ -44,12 +44,14 @@ const CarouselArticle = (): JSX.Element => {
   };
 
   return (
-    <article ref={carouselArticleRef} className={styles["carousel-article-component"]}>
-      <CarouselBox
-        queryData={queryData}
-        ref={lastPostRef}
-      />
-      <CarouselArrowBox carouselArticleRef={carouselArticleRef} />
+    <article className={styles["carousel-article-component"]}>
+      <div ref={carouselBoxWrapperRef} className={styles["carousel-box-wrapper"]}>
+        <CarouselBox
+          queryData={queryData}
+          ref={lastPostRef}
+        />
+      </div>
+      <CarouselArrowBox carouselArticleRef={carouselBoxWrapperRef} />
     </article>
   );
 };
