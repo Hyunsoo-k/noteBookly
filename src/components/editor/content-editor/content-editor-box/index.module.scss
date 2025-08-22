@@ -1,6 +1,6 @@
 .content-editor-box-component--editor-null {
   width: 800px;
-  min-height: calc(100vh/*전체 화면*/ - 74px/*헤더*/ - 392px/*제목입력 컴포넌트*/);
+  min-height: calc(100vh/*전체 화면*/ - 60px/*헤더*/ - 392px/*제목입력 컴포넌트*/);
   margin: 50px auto 50px;
 }
 
@@ -9,6 +9,6 @@
   display: flex;
   justify-content: space-between;
   width: 800px;
-  min-height: calc(100vh/*전체 화면*/ - 74px/*헤더*/ - 392px/*제목입력 컴포넌트*/);
+  min-height: calc(100vh/*전체 화면*/ - 60px/*헤더*/ - 392px/*제목입력 컴포넌트*/);
   margin: 50px auto 50px;
 }
