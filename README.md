@@ -14,8 +14,11 @@
 - scss
 - supabase
 
-## 배포
+## 배포 플랫폼
 Vercel
+
+## 배포 URL
+https://note-bookly.vercel.app
 
 ## 설치
 ```
