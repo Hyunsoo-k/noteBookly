@@ -92,7 +92,7 @@ const CreatePostPage = (): JSX.Element => {
       const [, errorValue] = Object.entries(error)[0] as [string, Record<string, string>];
       toggleToastPanelActive(errorValue?.message);
     }
-  }
+  };
 
   return (
     <FormProvider {...formTools}>
@@ -100,7 +100,7 @@ const CreatePostPage = (): JSX.Element => {
         onSubmit={formTools.handleSubmit(submitHandler.submit, submitHandler.error)}
         className={styles["create-post-page-component"]}
       >
-        <CreateOrEditPageHeader />
+        <CreateOrEditPageHeader isPending={useCreatePostMutation.isPending} />
         <ToastPanel />
         <EditorHeader />
         <ContentEditorBox editor={editor} />
