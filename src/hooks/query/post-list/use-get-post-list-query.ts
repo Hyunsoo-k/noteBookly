@@ -6,7 +6,6 @@ import queryKey from "@/queryKey";
 const queryFn = async (queryString: string, pageParam: string | null): Promise<any> => {
   if (queryString && pageParam) queryString = `${queryString}&cursor=${pageParam}`;
   if (!queryString && pageParam) queryString = `?cursor=${pageParam}`;
-  console.log(queryString);
   const response = await instance.get(`/post-list${queryString}`);
 
   return response.data;
