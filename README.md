@@ -18,7 +18,7 @@
 Vercel
 
 ## 배포 URL
-https://note-bookly.vercel.app
+2026-06-09 현재 supabase 스토리지 변경, 리팩토링 중 (완료 후 재배포 예정)
 
 ## 설치
 ```
